@@ -1,0 +1,219 @@
+@use 'variables' as *;
+@use 'atoms';
+@use 'molecules';
+
+
+.page-wrapper { 
+  margin: 0; 
+	position: relative;
+}
+* {
+  @include atoms.box-sizing;
+}
+body{
+  background: $color-greenLit;
+}
+header h1:hover { 
+  display: block;
+	color: $color-greenLit;
+  width: 200px;
+  padding: 14px;
+  position: relative;
+  margin-left: 20px;
+  white-space: nowrap; 
+  font-family: $font-header;
+}
+@-webkit-keyframes header {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@-moz-keyframes header {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@keyframes header {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+
+header {
+  background: linear-gradient(212deg, #2a8c4a, #22577a);
+  background-size: 400% 400%;
+
+  -webkit-animation: header 7s ease infinite;
+  -moz-animation: header 7s ease infinite;
+  animation: header 7s ease infinite;
+}
+
+.intro a:hover, .intro a:focus {
+  z-index: 2;
+  color: $color-greenLit;
+  background: $color-blue;
+  text-decoration: none;
+}
+
+.summary {
+  width: auto;
+	margin-top: 70px;
+  background-image: url(images/SplitS.png);
+  background-image: opacity 40%;
+}
+
+.supporting .requirements {
+  float: none;
+  clear: both;
+  width: 73%;
+  padding-left: 0;
+}
+.requirements{
+  margin-left: 50px;
+  p{
+    color: $color-greenDark;
+  }
+}
+.explanation, .preamble{
+  p{
+    color: $color-greenDark;
+  }
+}
+div.participation, div.benefits{
+  background-color: $color-greenMed;
+  p{
+    color: $color-white;
+  }
+}
+.sidebar ul {
+  list-style: none;
+  overflow: hidden;
+}
+.sidebar h3{
+  display: none;
+}
+
+.design-archives {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  background: $color-greenLit;
+  background: linear-gradient(180deg, $color-greenLit 0%, $color-greenMed 13%, $color-greenDark 33%, $color-blue 64%, $color-brown 86%, $color-brown 92%);
+  opacity: 70%;
+}
+
+
+.design-archives li {
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style: none;
+}
+.design-archives li.viewall {
+  top: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+.previous, .next {
+  left: 0;
+  z-index: 3;
+}
+.next {
+  left: auto;
+  right: 0;
+}
+.design-archives a, .design-archives a:visited {
+  color: $color-greenMed;
+}
+.viewall{
+  text-transform: uppercase;
+}
+.design-archives a:hover, .design-archives a:focus {
+  color:$color-greenMed;
+}
+.design-archives .previous a, .design-archives .next a {
+  display: block;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  text-indent: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.design-archives .viewall a {
+  z-index: 2;
+  width: 100%;
+  padding: 12px 0 0 0;
+  text-align: center;
+  text-decoration: none;
+}
+.design-archives a::before {
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  text-indent: 0;
+  font-size: 50px;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 70px;
+  -webkit-font-smoothing: antialiased;
+}
+.design-archives .viewall a:hover, .design-archives .viewall a:focus, .design-archives .viewall a:active,
+.design-archives a:hover::before, .design-archives a:focus::before, .design-archives a:active::before {
+  background-color: $color-blue;
+}
+
+.design-archives .next a::before {
+  content: ">";
+}
+
+.sidebar li a:link, .sidebar li a:visited{
+  @include atoms.a-styles;
+  text-decoration: none;
+}
+footer { 
+  clear: both;
+  text-align: center; 
+	display: flex;
+  justify-content: center;
+  background-image: url(images/path.jpg);
+  background-size: 800px;
+}
+
+footer a {
+  text-decoration: none;
+  color: transparent;
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+footer a.zen-validate-html {
+  background-image: url(images/html-5.png);
+}
+
+footer a.zen-validate-css {
+  background-image: url(images/css-3.png);
+    
+}
+
+footer a.zen-license {
+  background-image: url(images/cc.png);
+    
+}
+
+footer a.zen-accessibility {
+  background-image: url(images/info.png);
+    
+}
+
+footer a.zen-github {
+  background-image: url(images/github.png);
+}

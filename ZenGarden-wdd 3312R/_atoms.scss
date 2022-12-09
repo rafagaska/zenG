@@ -1,0 +1,77 @@
+@use 'variables' as *;
+
+// mixins to take care of repeated patterns.
+
+@mixin box-sizing{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+@mixin header-text {
+  font-weight: bold;
+  font-family: $font-header;
+  font-size: 2em;
+  letter-spacing: 1px;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+@mixin side-style{
+  position: absolute;
+  right: 0;
+  width: 33.3%;
+  padding: 0 0 20px 0;
+  margin: 0;
+  overflow: visible;
+}
+@mixin body-text ($font-size: 1.2em, $line-height: 2) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin a-styles{
+  color: $color-greenMed;
+  text-shadow: 1px 1.5px #7a3904;
+}
+// Styles that should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
+
+h1 {
+  color: $color-white;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 3.2 em;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  border-bottom: none;
+  font-family: $font-header;
+}
+
+h2 {
+  color: $color-greenMed;
+  font-family: $font-header;
+  display: block;
+  position: relative;
+  font-size: 3.5em;
+  letter-spacing: 1px;
+  line-height: 1em;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 30px;
+  border-top: none;
+}
+
+
+h4 {
+  font-size: 1 em;
+  letter-spacing: 1px;
+  line-height: 1em;
+  margin: 1em 0;
+}
+
+
+a {
+  @include body-text;
+  text-decoration: none;
+}
+
+
+

@@ -1,0 +1,186 @@
+@use 'variables' as *;
+@use 'atoms';
+
+// use the mixins from the atoms module to compose our molecules. If you prefer the terminology 'blocks' and 'elements' feel free to use it instead!
+
+//The base styling we made on our atoms (elements) does most of the work...here we would make any modifications on the elements if they need to appear differently in a certain molecule (block)
+
+// To use an mixin from the atoms.scss file use the format:  @include atoms.mixinname;
+
+h3{
+  @include atoms.header-text;
+}
+.intro a{
+  color: $color-greenDark;
+  font-weight: bolder;
+}
+
+li a{
+  font-family: $font-text;
+} 
+.summary {
+  padding: 50px 20px 0 20px;
+  p{
+    font-family: $font-text;
+    font-size: 1.5em;
+    color: $color-white;
+    font-weight: bolder;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+.participation, .benefits, .requirements{
+  a{
+    color: $color-blue;
+    
+  }
+}
+@media screen and (min-width: 800px) {
+  .preamble{
+    float: left;
+    width: 60%;
+    padding: 0.5em 5% 0.5em 10%;
+    position: relative;
+    p{
+      @include atoms.body-text;
+    }
+  }
+  .design-archives{
+    top: 223px;
+  }
+
+  .sidebar {
+	margin-left: 600px; 
+	top: 0; 
+	right: 0;
+	}
+  .zen-resources ul{
+    font-size: 22px;
+  }
+  .supporting div, .requirements h3, .requirements p {
+    float: left;
+    clear: left;
+    width: 76%;
+    padding: 0.5em 5% 0.5em 10%;
+    position: relative;
+    p{
+      @include atoms.body-text;
+    }
+  }
+  .explanation h3, .explanation p,
+  .participation h3, .participation p,
+  .benefits h3, .benefits p {
+    width: 100%;
+  }
+  .supporting p {
+    width: 80%;
+  }
+  nav, .supporting {
+    display: inline;
+  }
+  .design-archives{
+    top: 223px;
+  }
+  .zen-resources h3 {
+    display: none;
+  }
+  .zen-resources ul {
+    margin: 0 9.4% 0 14.7%;
+  }
+  .zen-resources li{
+    padding: 4em 3em 2em 1em;
+    text-transform: uppercase;
+  }
+  .summary {
+    padding-top: 3.25em;
+  }
+  .requirements h3, .requirements p {
+    margin: 0;
+    padding-bottom: 0;
+  }
+  .design-selection li, .zen-resources li{
+    margin: 0;
+    display: block;
+    color: $color-greenLit;
+    text-decoration: none;
+  }
+  
+  .design-selection li{
+    padding: 1% 1%;
+    margin-top: 12.5%;
+    margin-left: 40px;
+  }
+
+  .sidebar div.design-selection{
+    background: transparent url(images/jan-kopriva.jpg) center/cover;
+    color: $color-white;
+    top: 480px;
+    height: 27%;
+    @include atoms.side-style;
+  }
+  
+  .sidebar div.zen-resources{
+    background: transparent url(images/sidebararchive.jpg) center/cover;
+    height: 28.9%;
+    top: 2305px;
+    @include atoms.side-style;
+  }
+  footer {
+    background-size: 800px;
+    a{
+      padding: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .preamble{
+    margin-left: 50px;
+    margin-right: 40px;
+  }
+  .design-archives{
+    position: absolute;
+    top: 280px;
+  }
+  .sidebar div.design-selection{  
+    background: transparent url(images/jan-kopriva.jpg) center/cover;
+    li{
+      color: $color-greenLit;
+    }
+  }
+  div.participation, div.benefits{
+    padding: 0.1em 0;
+    p, h3{
+    margin-left: 50px;
+    margin-right: 50px;
+    }
+  }
+  div.explanation{
+    p, h3{
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  }
+  .sidebar div.zen-resources{
+    background: transparent url(images/sidebararchive.jpg) center/cover;
+  }
+  footer{
+    background-size: 300px;
+    padding: auto;
+    a {
+      margin: 0.7em;
+    }
+  }
+  footer a.zen-validate-html {
+    background-size: 80%;
+  }
+  
+  footer a.zen-validate-css {
+    background-size: 123%;
+  }
+  
+  footer a.zen-accessibility {
+   background-size: 98%;   
+  }
+}
